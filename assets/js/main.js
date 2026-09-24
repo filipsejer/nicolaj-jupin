@@ -9,7 +9,7 @@
   var WIP = window.WIP || [];
 
   // Hallmark number: oldest piece is Nr. 01, so the number itself shows progression.
-  PIECES.slice().sort(function (a, b) { return a.date.localeCompare(b.date); })
+  PIECES.slice().sort(function (a, b) { return (a.date || "9999").localeCompare(b.date || "9999"); })
     .forEach(function (p, i) { p.no = String(i + 1).padStart(2, "0"); });
 
   function esc(s) {
@@ -17,7 +17,8 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function month(d) { var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + p[0]; }
+  function month(d) { if (!d) return "Dato følger"; var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + p[0]; }
+  function missingTag(p) { return p.missing && p.missing.length ? '<span class="ph-tag">Info mangler</span>' : ""; }
   function specLine(p) {
     return [p.techniques.join(" · "), p.metal, p.weight, p.hours + " t", month(p.date)].filter(Boolean).join(" — ");
   }
@@ -30,7 +31,7 @@
   }
   function card(p) {
     return '<button class="card reveal" type="button" data-piece="' + esc(p.id) + '">' +
-      '<div class="frame">' + photo(p.images, p.title) + "</div>" +
+      '<div class="frame">' + (p.images.length ? missingTag(p) : "") + photo(p.images, p.title) + "</div>" +
       '<div class="card-meta"><span class="card-no">Nr. ' + p.no + "</span>" +
       '<span class="card-no">' + month(p.date) + "</span></div>" +
       "<h3>" + esc(p.title) + "</h3>" +
@@ -106,7 +107,8 @@
 
     var render = function () {
       var list = PIECES.filter(function (p) { return state.tech === "Alle" || p.techniques.indexOf(state.tech) > -1; })
-        .sort(function (a, b) { return state.sort === "aeldste" ? a.date.localeCompare(b.date) : b.date.localeCompare(a.date); });
+        .sort(function (a, b) { var ad = a.date || "9999", bd = b.date || "9999";
+          return state.sort === "aeldste" ? ad.localeCompare(bd) : (b.date || "").localeCompare(a.date || ""); });
       grid.innerHTML = list.length ? list.map(card).join("") : '<p class="empty">Ingen stykker med denne teknik endnu.</p>';
       countEl.textContent = list.length + (list.length === 1 ? " stykke" : " stykker");
       chips.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-tech") === state.tech); });
@@ -138,6 +140,7 @@
       '<div class="piece-body"><button class="piece-close" type="button" aria-label="Luk">×</button>' +
       '<span class="card-no">Nr. ' + p.no + " — " + month(p.date) + "</span>" +
       "<h2>" + esc(p.title) + (p.placeholder ? ' <span class="ph-tag">Pladsholder</span>' : "") + "</h2>" +
+      (p.missing && p.missing.length ? '<p class="spec" style="color:var(--gold-deep)">Info mangler: ' + esc(p.missing.join(", ")) + "</p>" : "") +
       "<p>" + esc(p.text) + "</p>" +
       '<table class="spec-table"><tbody>' +
       "<tr><th>Teknikker</th><td>" + esc(p.techniques.join(", ")) + "</td></tr>" +

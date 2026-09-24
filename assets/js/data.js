@@ -1,10 +1,11 @@
 /* ============================================================
-   ALT INDHOLD TIL PORTFOLIO OG "I GANG" BOR HER.
+   ALT INDHOLD TIL PORTFOLIO OG "WIP" BOR HER.
    Tilføj et nyt stykke: kopier en blok i PIECES, ret felterne,
    og læg fotos i assets/pieces/ (f.eks. assets/pieces/signetring-1.jpg).
 
-   Alle stykker markeret med  placeholder: true  er PLADSHOLDERE
-   og vises med et "Pladsholder"-mærke, indtil de er erstattet.
+   missing: [...]  lister oplysninger, der mangler. Stykket vises med
+   et "Info mangler"-mærke, indtil listen er tom (eller slettet).
+   Alle stykker markeret med  placeholder: true  er PLADSHOLDERE.
    ============================================================ */
 
 /* Teknikkerne i "Færdighedsprotokollen" på forsiden, i visningsrækkefølge. */
@@ -15,103 +16,69 @@ window.TECHNIQUES = [
   { name: "Trådtrækning",     desc: "Tråd trukket ned til præcis den dimension, stykket kræver." },
   { name: "Fletning",         desc: "Flettede metaller — mønstre, der kræver ens spænding hele vejen." },
   { name: "Valsning",         desc: "Plade og tråd valset til ensartet tykkelse." },
+  { name: "Hamring",          desc: "Hamret overflade, slag for slag — tekstur der fanger lyset." },
   { name: "Udglødning",       desc: "Metallet blødgjort på det rigtige tidspunkt, så det kan formes uden at revne." },
   { name: "Teknisk tegning",  desc: "Egne designs tegnet op med mål, før der saves et eneste stykke." },
   { name: "Polering",         desc: "Højglans, mat eller børstet — overfladen er den sidste signatur." }
 ];
 
-/* Færdige stykker. date = "ÅÅÅÅ-MM". images = stier fra sidens rod; tom liste viser en pladsholder. */
+/* Færdige stykker. date = "ÅÅÅÅ-MM" (tom = "Dato følger"). images = stier fra sidens rod.
+   weight og hours er valgfri — udelad dem, hvis de ikke kendes. */
 window.PIECES = [
   {
-    id: "signetring",
-    title: "Signetring",
-    date: "2026-05",
-    metal: "Sølv 925",
-    weight: "18,2 g",
-    hours: 22,
-    techniques: ["Teknisk tegning", "Valsning", "Lodning", "Polering"],
+    id: "flettet-ring-hjerte",
+    title: "Flettet ring med hjerte",
+    date: "",
+    metal: "Sølv",
+    techniques: ["Fletning", "Trådtrækning", "Lodning", "Polering"],
     featured: true,
-    images: [],
-    text: "En klassisk signetring, tegnet op med mål, valset og loddet i skinnen. Pladen er klar til gravering, når jeg lærer det på Grundforløb 2.",
-    placeholder: true
+    images: ["assets/pieces/flettet-ring-hjerte.jpg"],
+    text: "En flettet midte af trukket tråd, lagt mellem to glatte skinner, med et hjerte loddet på forsiden. Fletningen fortsætter hele vejen rundt, også på indersiden.",
+    missing: ["dato", "legering", "vægt", "timer", "Nicolajs egen beskrivelse"]
   },
   {
-    id: "cabochon-ring",
-    title: "Ring med cabochon",
-    date: "2026-02",
-    metal: "Sølv 925 · labradorit",
-    weight: "6,4 g",
-    hours: 14,
-    techniques: ["Indfatning", "Lodning", "Polering"],
+    id: "ring-nj-stempel",
+    title: "Ring med facetkant",
+    date: "",
+    metal: "Sølv",
+    techniques: ["Lodning", "Polering"],
     featured: true,
-    images: [],
-    text: "Min første kassefatning. Kassen er bukket af 0,4 mm båndmateriale og trykket ind over stenen med fattehammer.",
-    placeholder: true
+    images: ["assets/pieces/ring-nj-stempel.jpg"],
+    text: "En glat ring med facetslebne kanter og børstet overflade. Indeni sidder mit stempel: NJ.",
+    missing: ["dato", "legering", "vægt", "timer", "teknikker"]
   },
   {
-    id: "ankerkaede",
-    title: "Ankerkæde",
-    date: "2026-03",
-    metal: "Sølv 925",
-    weight: "11,0 g",
-    hours: 30,
-    techniques: ["Kædefremstilling", "Trådtrækning", "Lodning", "Polering"],
-    featured: false,
-    images: [],
-    text: "112 håndbukkede led, hvert enkelt loddet. En øvelse i tålmodighed og ens mål.",
-    placeholder: true
-  },
-  {
-    id: "flettet-armbaand",
-    title: "Flettet armbånd",
-    date: "2025-10",
-    metal: "Sølv 925",
-    weight: "7,8 g",
-    hours: 16,
-    techniques: ["Fletning", "Trådtrækning", "Udglødning", "Polering"],
+    id: "hamrede-ringe",
+    title: "Hamrede ringe, par",
+    date: "",
+    metal: "Sølv",
+    techniques: ["Hamring", "Lodning", "Polering"],
     featured: true,
-    images: [],
-    text: "Fire tråde trukket til samme dimension og flettet i hånden. Udglødning undervejs holder metallet blødt nok til at flette jævnt.",
-    placeholder: true
+    images: ["assets/pieces/hamrede-ringe.jpg"],
+    text: "To ringe med hamret overflade, fotograferet på bænken. Udfordringen ved et par er, at de skal blive ens.",
+    missing: ["dato", "legering", "vægt", "timer"]
   },
   {
-    id: "oreringe",
-    title: "Øreringe i valset plade",
-    date: "2025-12",
-    metal: "Sølv 925",
-    weight: "4,1 g",
-    hours: 8,
-    techniques: ["Valsning", "Udglødning", "Polering"],
-    featured: false,
-    images: [],
-    text: "Et par øreringe i valset plade. Udfordringen var at få to stykker til at blive ens.",
-    placeholder: true
-  },
-  {
-    id: "udsavet-broche",
-    title: "Udsavet broche",
-    date: "2025-08",
-    metal: "Messing · kobber",
-    weight: "12,0 g",
-    hours: 10,
-    techniques: ["Teknisk tegning", "Lodning"],
-    featured: false,
-    images: [],
-    text: "Et mønster tegnet i hånden, savet ud i messing og lagt oven på en kobberplade.",
-    placeholder: true
-  },
-  {
-    id: "forste-ring",
-    title: "Min første ring",
-    date: "2025-05",
-    metal: "Kobber",
-    weight: "5,0 g",
-    hours: 6,
+    id: "bred-ring",
+    title: "Bred ring, børstet",
+    date: "",
+    metal: "Gult metal — bekræft",
     techniques: ["Lodning", "Polering"],
     featured: false,
-    images: [],
-    text: "Her startede det. Loddet er for tykt og skinnen er ikke helt rund — og det er netop derfor, den er med.",
-    placeholder: true
+    images: ["assets/pieces/bred-ring.jpg"],
+    text: "En bred, flad ring med skarpe kanter og børstet finish.",
+    missing: ["dato", "materiale", "vægt", "timer", "teknikker"]
+  },
+  {
+    id: "blankpoleret-ring",
+    title: "Blankpoleret ring",
+    date: "",
+    metal: "Gult metal — bekræft",
+    techniques: ["Lodning", "Polering"],
+    featured: false,
+    images: ["assets/pieces/blankpoleret-ring.jpg"],
+    text: "En afrundet ring poleret til højglans.",
+    missing: ["dato", "materiale", "vægt", "timer", "teknikker", "skarpere foto"]
   }
 ];
 
