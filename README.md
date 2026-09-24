@@ -9,7 +9,7 @@ It's plain HTML/CSS with a little vanilla JS. There is no build step and nothing
 | --- | --- |
 | `/` | Forside: hero, promises, skills ledger ("Færdighedsprotokol"), selected work, current WIP, contact |
 | `/portfolio/` | All pieces. Filter by technique; sort oldest-first to show progression. Each piece opens in a dialog and has a shareable link (`/portfolio/#signetring`) |
-| `/i-gang/` | Work in progress written as workbench notes: what I'm trying / what went wrong / next step |
+| `/wip/` | Work in progress written as workbench notes: what I'm trying / what went wrong / next step |
 | `/om/` | About |
 | `/kontakt/` | Email, phone, Instagram, availability and a form that opens the visitor's mail app |
 

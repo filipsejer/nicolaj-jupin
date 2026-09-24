@@ -9,13 +9,15 @@
 
 /* Teknikkerne i "Færdighedsprotokollen" på forsiden, i visningsrækkefølge. */
 window.TECHNIQUES = [
-  { name: "Lodning",   desc: "Rene, næsten usynlige samlinger — fra fine kædeled til ringskinner." },
-  { name: "Fatning",   desc: "Sten der sidder sikkert og smukt: kasse-, krap- og kornfatning." },
-  { name: "Smedning",  desc: "Formgivning med hammer og ambolt; metallet skal føles levende." },
-  { name: "Udsavning", desc: "Præcis savning og filning efter egen tegning." },
-  { name: "Støbning",  desc: "Voksmodellering og støbning af former, der ikke kan bygges." },
-  { name: "Gravering", desc: "Håndgravering af bogstaver og ornamenter." },
-  { name: "Polering",  desc: "Højglans, mat eller børstet — overfladen er den sidste signatur." }
+  { name: "Lodning",          desc: "Rene, næsten usynlige samlinger — fra fine kædeled til ringskinner." },
+  { name: "Indfatning",       desc: "Ædelsten der sidder sikkert og smukt i en fatning, jeg selv har bygget." },
+  { name: "Kædefremstilling", desc: "Kæder bygget fra bunden: tråd, led, lodning og lås." },
+  { name: "Trådtrækning",     desc: "Tråd trukket ned til præcis den dimension, stykket kræver." },
+  { name: "Fletning",         desc: "Flettede metaller — mønstre, der kræver ens spænding hele vejen." },
+  { name: "Valsning",         desc: "Plade og tråd valset til ensartet tykkelse." },
+  { name: "Udglødning",       desc: "Metallet blødgjort på det rigtige tidspunkt, så det kan formes uden at revne." },
+  { name: "Teknisk tegning",  desc: "Egne designs tegnet op med mål, før der saves et eneste stykke." },
+  { name: "Polering",         desc: "Højglans, mat eller børstet — overfladen er den sidste signatur." }
 ];
 
 /* Færdige stykker. date = "ÅÅÅÅ-MM". images = stier fra sidens rod; tom liste viser en pladsholder. */
@@ -27,10 +29,10 @@ window.PIECES = [
     metal: "Sølv 925",
     weight: "18,2 g",
     hours: 22,
-    techniques: ["Smedning", "Lodning", "Gravering", "Polering"],
+    techniques: ["Teknisk tegning", "Valsning", "Lodning", "Polering"],
     featured: true,
     images: [],
-    text: "En klassisk signetring, smedet ud af én stang og loddet i skinnen. Monogrammet er håndgraveret i spejlvendt skrift, så den kan bruges som segl.",
+    text: "En klassisk signetring, tegnet op med mål, valset og loddet i skinnen. Pladen er klar til gravering, når jeg lærer det på Grundforløb 2.",
     placeholder: true
   },
   {
@@ -40,7 +42,7 @@ window.PIECES = [
     metal: "Sølv 925 · labradorit",
     weight: "6,4 g",
     hours: 14,
-    techniques: ["Fatning", "Lodning", "Polering"],
+    techniques: ["Indfatning", "Lodning", "Polering"],
     featured: true,
     images: [],
     text: "Min første kassefatning. Kassen er bukket af 0,4 mm båndmateriale og trykket ind over stenen med fattehammer.",
@@ -53,36 +55,36 @@ window.PIECES = [
     metal: "Sølv 925",
     weight: "11,0 g",
     hours: 30,
-    techniques: ["Lodning", "Polering"],
+    techniques: ["Kædefremstilling", "Trådtrækning", "Lodning", "Polering"],
     featured: false,
     images: [],
     text: "112 håndbukkede led, hvert enkelt loddet. En øvelse i tålmodighed og ens mål.",
     placeholder: true
   },
   {
-    id: "voksvedhaeng",
-    title: "Voksstøbt vedhæng",
+    id: "flettet-armbaand",
+    title: "Flettet armbånd",
     date: "2025-10",
     metal: "Sølv 925",
     weight: "7,8 g",
     hours: 16,
-    techniques: ["Støbning", "Polering"],
+    techniques: ["Fletning", "Trådtrækning", "Udglødning", "Polering"],
     featured: true,
     images: [],
-    text: "Modelleret i blødt voks og støbt i sølv. Formen er inspireret af rullesten fra Nordkysten.",
+    text: "Fire tråde trukket til samme dimension og flettet i hånden. Udglødning undervejs holder metallet blødt nok til at flette jævnt.",
     placeholder: true
   },
   {
-    id: "hamrede-oreringe",
-    title: "Hamrede øreringe",
+    id: "oreringe",
+    title: "Øreringe i valset plade",
     date: "2025-12",
     metal: "Sølv 925",
     weight: "4,1 g",
     hours: 8,
-    techniques: ["Smedning", "Polering"],
+    techniques: ["Valsning", "Udglødning", "Polering"],
     featured: false,
     images: [],
-    text: "Et par øreringe med hamret overflade. Udfordringen var at få to stykker til at blive ens.",
+    text: "Et par øreringe i valset plade. Udfordringen var at få to stykker til at blive ens.",
     placeholder: true
   },
   {
@@ -92,7 +94,7 @@ window.PIECES = [
     metal: "Messing · kobber",
     weight: "12,0 g",
     hours: 10,
-    techniques: ["Udsavning", "Lodning"],
+    techniques: ["Teknisk tegning", "Lodning"],
     featured: false,
     images: [],
     text: "Et mønster tegnet i hånden, savet ud i messing og lagt oven på en kobberplade.",
@@ -105,7 +107,7 @@ window.PIECES = [
     metal: "Kobber",
     weight: "5,0 g",
     hours: 6,
-    techniques: ["Udsavning", "Lodning", "Polering"],
+    techniques: ["Lodning", "Polering"],
     featured: false,
     images: [],
     text: "Her startede det. Loddet er for tykt og skinnen er ikke helt rund — og det er netop derfor, den er med.",
@@ -113,7 +115,7 @@ window.PIECES = [
   }
 ];
 
-/* Igangværende projekter. step = hvor langt projektet er (1–steps.length). */
+/* WIP-projekter. step = hvor langt projektet er (1–steps.length). */
 window.WIP = [
   {
     id: "guldring",
