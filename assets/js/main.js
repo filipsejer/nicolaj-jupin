@@ -44,6 +44,13 @@
     toggle.setAttribute("aria-expanded", open);
   });
 
+  /* ---------- hero caption (home): number and date of the hero piece ---------- */
+  var heroCap = document.querySelector("[data-hero-caption]");
+  if (heroCap) {
+    var hp = PIECES.filter(function (p) { return p.id === heroCap.getAttribute("data-hero-caption"); })[0];
+    if (hp) { heroCap.children[0].textContent = "Nr. " + hp.no; heroCap.children[1].textContent = month(hp.date); }
+  }
+
   /* ---------- featured (home) ---------- */
   var featured = document.getElementById("featured");
   if (featured) {
