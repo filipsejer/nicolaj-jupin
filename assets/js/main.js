@@ -29,13 +29,12 @@
     return '<span class="ph-tag">Pladsholder</span><div class="ph-photo"><div><span class="mark" aria-hidden="true"></span>' +
       '<span class="spec">' + esc(label || "Foto følger") + "</span></div></div>";
   }
+  // Cards show only number and date; everything else lives in the piece dialog.
   function card(p) {
-    return '<button class="card reveal" type="button" data-piece="' + esc(p.id) + '">' +
-      '<div class="frame">' + (p.images.length ? missingTag(p) : "") + photo(p.images, p.title) + "</div>" +
+    return '<button class="card reveal" type="button" data-piece="' + esc(p.id) + '" aria-label="' + esc(p.title + ", nr. " + p.no) + '">' +
+      '<div class="frame">' + photo(p.images, p.title) + "</div>" +
       '<div class="card-meta"><span class="card-no">Nr. ' + p.no + "</span>" +
-      '<span class="card-no">' + month(p.date) + "</span></div>" +
-      "<h3>" + esc(p.title) + "</h3>" +
-      '<div class="spec">' + esc(p.techniques.join(" · ")) + " — " + esc(p.metal) + "</div></button>";
+      '<span class="card-no">' + month(p.date) + "</span></div></button>";
   }
 
   /* ---------- nav ---------- */
