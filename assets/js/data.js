@@ -14,7 +14,7 @@
 window.TECHNIQUES = [
   { name: "Fletning",         desc: "Flettede metaller i mønstre, der kræver ens spænding hele vejen rundt." },
   { name: "Kædefremstilling", desc: "Kæder bygget fra bunden, blandt andet kongekæde, dronningekæde og panserkæde." },
-  { name: "Lodning",          desc: "Rene, næsten usynlige samlinger på alt fra fine kædeled til ringskinner." },
+  { name: "Lodning",          desc: "Rene, næsten usynlige samlinger på alt fra kædeled til ringskinner." },
   { name: "Udsavning",        desc: "Præcis savning efter tegning, fra mønstre i messing til gennembrudte ringe." },
   { name: "Teknisk tegning",  desc: "Egne designs tegnet op med mål og materialer, før der saves et eneste stykke." },
   { name: "Omsmeltning",     desc: "Rester og skrot smeltet om i diglen, så intet metal går til spilde." },
@@ -37,7 +37,7 @@ window.PIECES = [
     metal: "Sølv",
     techniques: ["Lodning", "Polering"],
     featured: false,
-    images: ["assets/pieces/halvrund-ring-1.jpg", "assets/pieces/halvrund-ring-2.jpg", "assets/pieces/halvrund-ring-3.jpg", "assets/pieces/halvrund-ring-4.jpg"],
+    images: ["assets/pieces/halvrund-ring-1.jpg", "assets/pieces/halvrund-ring-2.jpg", "assets/pieces/halvrund-ring-3.jpg", "assets/pieces/halvrund-ring-4.jpg", "assets/pieces/nj-ringe-proces.jpg"],
     text: "En klassisk halvrund ring, poleret til højglans, med mit NJ-stempel på indersiden.",
     missing: ["legering", "Nicolajs beskrivelse"]
   },
@@ -49,7 +49,7 @@ window.PIECES = [
     metal: "Sølv",
     techniques: ["Lodning", "Polering"],
     featured: false,
-    images: ["assets/pieces/ring-nj-stempel-1.jpg", "assets/pieces/ring-nj-stempel-2.jpg", "assets/pieces/ring-nj-stempel-3.jpg"],
+    images: ["assets/pieces/ring-nj-stempel-1.jpg", "assets/pieces/ring-nj-stempel-2.jpg", "assets/pieces/ring-nj-stempel-3.jpg", "assets/pieces/nj-ringe-proces.jpg"],
     text: "En glat ring med facetslebne kanter og børstet overflade. Indeni sidder mit stempel: NJ.",
     missing: ["legering"]
   },
@@ -64,18 +64,6 @@ window.PIECES = [
     images: ["assets/pieces/blankpoleret-ring-1.jpg", "assets/pieces/blankpoleret-ring-2.jpg"],
     text: "En afrundet ring poleret til højglans, stemplet NJ på indersiden.",
     missing: []
-  },
-  {
-    id: "hamrede-ringe",
-    type: "Ringe",
-    title: "Hamrede ringe, par",
-    date: "2026-09",
-    metal: "Sølv",
-    techniques: ["Lodning", "Polering"],
-    featured: false,
-    images: ["assets/pieces/hamrede-ringe-1.jpg"],
-    text: "To ringe med hamret overflade, fotograferet på bænken. Udfordringen ved et par er, at de skal blive ens.",
-    missing: ["legering"]
   },
   {
     id: "bred-ring",
@@ -157,8 +145,8 @@ window.PIECES = [
     metal: "Sølv",
     techniques: ["Kædefremstilling"],
     featured: true,
-    images: ["assets/pieces/kongekaede-solv-1.jpg", "assets/pieces/kongekaede-solv-2.jpg", "assets/pieces/kongekaede-solv-3.jpg", "assets/pieces/kongekaede-solv-4.jpg"],
-    text: "En halskæde i kongekæde, bygget fra bunden af hundredvis af små ringe. Første forsøg i november 2025, færdig halskæde i februar 2026.",
+    images: ["assets/pieces/kongekaede-solv-1.jpg", "assets/pieces/kongekaede-solv-2.jpg", "assets/pieces/kongekaede-solv-3.jpg"],
+    text: "En halskæde i kongekæde, bygget fra bunden af hundredvis af små ringe.",
     missing: ["legering", "længde"]
   },
   {
@@ -308,13 +296,13 @@ window.PIECES = [
   {
     id: "tegning-fatninger",
     type: "Tegninger",
-    title: "Kassefatninger og ring",
+    title: "Grabbefatninger og ring",
     date: "2026-09",
     metal: "Blyant på papir",
     techniques: ["Teknisk tegning"],
     featured: false,
     images: ["assets/pieces/tegning-fatninger-1.jpg"],
-    text: "Studier af kassefatninger set fra flere sider, og en ring med fatning tegnet i front- og sideprojektion.",
+    text: "Studier af grabbefatninger set fra flere sider, og en ring med fatning tegnet i front- og sideprojektion.",
     missing: []
   },
   {
@@ -386,7 +374,7 @@ window.PIECES = [
     techniques: ["Teknisk tegning"],
     featured: false,
     images: ["assets/pieces/tegning-krapfatning-1.jpg"],
-    text: "Teknisk tegning i flere projektioner med materialeliste: sølv 925, en 8 mm sort smaragd og to lilla 2 mm sten.",
+    text: "Teknisk tegning af en ring med krapfatning, set i flere projektioner.",
     missing: []
   },
   {
@@ -418,12 +406,24 @@ window.PIECES = [
     type: "Øvelser",
     title: "Omsmeltning og støbning af ten",
     date: "2026-05",
-    metal: "Sølv — bekræft",
+    metal: "Sølv · 14 kt guld",
     techniques: ["Omsmeltning", "Støbning"],
     featured: false,
     images: ["assets/pieces/omsmeltning-1.jpg", "assets/pieces/omsmeltning-2.jpg", "assets/pieces/omsmeltning-3.jpg"],
-    text: "Rester og skrot smeltes om i diglen og støbes til en ten, som derefter kan valses ud til tråd og plade. Ved siden af ligger den flettede ring med hjerte.",
-    missing: ["materiale: er den gyldne ten messing?"]
+    text: "Rester og skrot smeltes om i diglen og støbes til tene, som derefter kan valses ud til tråd og plade. Den gyldne ten er 14 karat guld, den lyse er sølv.",
+    missing: []
+  },
+  {
+    id: "kongekaede-aluminium",
+    type: "Halskæder",
+    title: "Kongekæde i aluminium",
+    date: "2025-11",
+    metal: "Aluminium",
+    techniques: ["Kædefremstilling"],
+    featured: false,
+    images: ["assets/pieces/kongekaede-aluminium-1.jpg"],
+    text: "Et kort stykke kongekæde i aluminium.",
+    missing: []
   }
 ];
 
