@@ -18,7 +18,6 @@
     });
   }
   function month(d) { if (!d) return "Dato følger"; var p = d.split("-"); return MONTHS[+p[1] - 1] + " " + p[0]; }
-  function missingTag(p) { return p.missing && p.missing.length ? '<span class="ph-tag">Info mangler</span>' : ""; }
   function specLine(p) {
     return [p.techniques.join(" · "), p.metal, p.weight, p.hours + " t", month(p.date)].filter(Boolean).join(" — ");
   }
@@ -70,7 +69,7 @@
   function wipBlock(w) {
     var bars = w.steps.map(function (_, i) { return '<i class="' + (i < w.step ? "on" : "") + '"></i>'; }).join("");
     return '<article class="wip reveal" id="' + esc(w.id) + '">' +
-      '<div class="frame">' + (w.images.length ? missingTag(w) : "") + photo(w.images, w.title, "Foto fra bænken følger") + "</div>" +
+      '<div class="frame">' + photo(w.images, w.title, "Foto fra bænken følger") + "</div>" +
       "<div>" +
       '<div class="wip-status spec"><span class="live">På bænken</span><span>Startet ' + month(w.started) + "</span><span>" + esc(w.metal) + "</span></div>" +
       "<h3>" + esc(w.title) + "</h3>" +
@@ -80,7 +79,6 @@
       [["Hvad jeg prøver", w.trying], ["Hvad gik galt", w.wrong], ["Næste skridt", w.next]].filter(function (n) { return n[1]; })
         .map(function (n) { return "<div><dt>" + n[0] + "</dt><dd>" + esc(n[1]) + "</dd></div>"; }).join("") +
       "</dl>" +
-      (w.missing && w.missing.length ? '<p class="spec" style="color:var(--gold-deep);margin-top:16px">Info mangler: ' + esc(w.missing.join(", ")) + "</p>" : "") +
       "</div></article>";
   }
   var wipEl = document.getElementById("wip");
@@ -147,13 +145,12 @@
     dialog.innerHTML = '<div class="piece-inner">' +
       '<div class="piece-media"><div class="frame">' + photo(p.images, p.title) + "</div>" + thumbs + "</div>" +
       '<div class="piece-body"><button class="piece-close" type="button" aria-label="Luk">×</button>' +
-      '<span class="card-no">Nr. ' + p.no + " — " + month(p.date) + "</span>" +
+      '<span class="card-no">Nr. ' + p.no + " · " + month(p.date) + "</span>" +
       "<h2>" + esc(p.title) + (p.placeholder ? ' <span class="ph-tag">Pladsholder</span>' : "") + "</h2>" +
-      (p.missing && p.missing.length ? '<p class="spec" style="color:var(--gold-deep)">Info mangler: ' + esc(p.missing.join(", ")) + "</p>" : "") +
       "<p>" + esc(p.text) + "</p>" +
       '<table class="spec-table"><tbody>' +
       "<tr><th>Teknikker</th><td>" + esc(p.techniques.join(", ")) + "</td></tr>" +
-      "<tr><th>Materiale</th><td>" + esc(p.metal) + "</td></tr>" +
+      (p.metal ? "<tr><th>Materiale</th><td>" + esc(p.metal) + "</td></tr>" : "") +
       (p.weight ? "<tr><th>Vægt</th><td>" + esc(p.weight) + "</td></tr>" : "") +
       (p.hours ? "<tr><th>Timer ved bænken</th><td>" + esc(p.hours) + "</td></tr>" : "") +
       "<tr><th>Færdig</th><td>" + month(p.date) + "</td></tr>" +

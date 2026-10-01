@@ -4,8 +4,8 @@
    og læg fotos i assets/pieces/ (f.eks. assets/pieces/signetring-1.jpg).
    Originalerne ligger i det private repo nicolaj-billeder.
 
-   missing: [...]  lister oplysninger, der mangler. Stykket vises med
-   et "Info mangler"-mærke, indtil listen er tom (eller slettet).
+   missing: [...]  er en intern huskeliste over oplysninger, der mangler.
+   Den vises ikke på sitet.
    Alle stykker markeret med  placeholder: true  er PLADSHOLDERE.
    ============================================================ */
 
@@ -118,7 +118,7 @@ window.PIECES = [
     type: "Ringe",
     title: "Gennembrudt ring",
     date: "2026-04",
-    metal: "Sølv — bekræft",
+    metal: "Sølv",
     techniques: ["Udsavning"],
     featured: false,
     images: ["assets/pieces/udsavet-ring-1.jpg"],
@@ -274,7 +274,7 @@ window.PIECES = [
     type: "Halskæder",
     title: "Karmoisinrød halskæde",
     date: "2025-10",
-    metal: "Metal · sten — bekræft",
+    metal: "",
     techniques: ["Kædefremstilling"],
     featured: false,
     images: ["assets/pieces/karmoisin-kaede-1.jpg"],
@@ -286,7 +286,7 @@ window.PIECES = [
     type: "Halskæder",
     title: "Sæt med sorte sten",
     date: "2025-02",
-    metal: "Gult metal · sorte sten — bekræft",
+    metal: "",
     techniques: ["Montering"],
     featured: false,
     images: ["assets/pieces/sort-guld-saet-1.jpg"],

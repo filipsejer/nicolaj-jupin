@@ -56,7 +56,7 @@ A few things worth knowing:
 
 - Pieces are numbered by date, oldest first, so the numbers shift when an older piece is added.
 - The first image is the one shown in the grid.
-- Anything listed in `missing` shows up as "Info mangler" in the piece view. Leave it empty once the details are in.
+- `missing` is an internal to-do list of details still to get. It is not shown on the site.
 - Categories come from `TYPES` and the skills list on the front page comes from `TECHNIQUES`, both at the top of `data.js`.
 
 WIP projects live in the `WIP` list in the same file and work the same way.
