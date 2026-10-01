@@ -19,7 +19,6 @@ window.TECHNIQUES = [
   { name: "Teknisk tegning",  desc: "Egne designs tegnet op med mål og materialer, før der saves et eneste stykke." },
   { name: "Omsmeltning",     desc: "Rester og skrot smeltet om i diglen, så intet metal går til spilde." },
   { name: "Støbning",         desc: "Tene og plader støbt af mit eget metal, klar til at blive valset ud." },
-  { name: "Valsning",         desc: "Plade og tråd valset til ensartet tykkelse." },
   { name: "Udglødning",       desc: "Metallet blødgjort på det rigtige tidspunkt, så det kan formes uden at revne." },
   { name: "Polering",         desc: "Højglans, mat eller børstet. Overfladen er den sidste signatur." }
 ];
