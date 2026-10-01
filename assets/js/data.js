@@ -56,12 +56,12 @@ window.PIECES = [
     id: "blankpoleret-ring",
     title: "Blankpoleret ring",
     date: "2026-09",
-    metal: "Gult metal — bekræft",
+    metal: "Messing",
     techniques: ["Lodning", "Polering"],
     featured: false,
     images: ["assets/pieces/blankpoleret-ring-1.jpg", "assets/pieces/blankpoleret-ring-2.jpg"],
     text: "En afrundet ring poleret til højglans, stemplet NJ på indersiden.",
-    missing: ["materiale"]
+    missing: []
   },
   {
     id: "hamrede-ringe",
@@ -78,12 +78,12 @@ window.PIECES = [
     id: "bred-ring",
     title: "Bred ring, børstet",
     date: "2026-09",
-    metal: "Gult metal — bekræft",
+    metal: "Messing",
     techniques: ["Lodning", "Polering"],
     featured: false,
     images: ["assets/pieces/bred-ring-1.jpg", "assets/pieces/bred-ring-2.jpg"],
     text: "En bred, flad ring med skarpe kanter og børstet finish.",
-    missing: ["materiale"]
+    missing: []
   },
   {
     id: "graveringsovelse",
@@ -120,14 +120,14 @@ window.PIECES = [
   },
   {
     id: "oxideret-vedhaeng",
-    title: "Oxideret vedhæng",
+    title: "Snorkfrøken, oxideret vedhæng",
     date: "2026-05",
     metal: "Sølv",
     techniques: ["Udsavning", "Oxidering", "Polering"],
     featured: false,
     images: ["assets/pieces/oxideret-vedhaeng-1.jpg"],
-    text: "Et udsavet vedhæng med sort, oxideret overflade og blankt poleret øsken.",
-    missing: ["motiv", "legering", "Nicolajs beskrivelse"]
+    text: "Snorkfrøken fra Mumitroldene, savet ud og oxideret sort, med blankt poleret øsken.",
+    missing: ["legering", "Nicolajs beskrivelse"]
   },
   {
     id: "udsavet-ring",
@@ -164,14 +164,14 @@ window.PIECES = [
   },
   {
     id: "bred-flettet-ring",
-    title: "Bred ring med flettet midte",
+    title: "Ring til Malte Ebert",
     date: "2026-02",
     metal: "Sølv",
     techniques: ["Fletning", "Trådtrækning", "Lodning", "Polering"],
     featured: true,
     images: ["assets/pieces/bred-flettet-ring-1.jpg", "assets/pieces/bred-flettet-ring-2.jpg", "assets/pieces/bred-flettet-ring-3.jpg", "assets/pieces/bred-flettet-ring-4.jpg", "assets/pieces/bred-flettet-ring-5.jpg", "assets/pieces/bred-flettet-ring-6.jpg"],
-    text: "Tråden flettes først som en lang fletning, bøjes til en ring og loddes ind mellem to skinner. Billederne viser processen fra fletning til færdig ring i æsken.",
-    missing: ["legering", "til hvem (kunde?)"]
+    text: "En bred ring med flettet midte, lavet til sangeren Malte Ebert. Tråden flettes først som en lang fletning, bøjes til en ring og loddes ind mellem to skinner. Billederne viser processen fra fletning til færdig ring i æsken.",
+    missing: ["legering"]
   },
   {
     id: "ring-lyserod-sten",
@@ -310,29 +310,16 @@ window.PIECES = [
 /* WIP-projekter. step = hvor langt projektet er (1–steps.length). Tomme noter vises ikke. */
 window.WIP = [
   {
-    id: "krapfatning-ring",
-    title: "Ring med krapfatning til 8 mm sten",
-    started: "2026-04",
-    metal: "Sølv 925",
-    steps: ["Tegning", "Skinne", "Krapfatning", "Fatning af sten", "Finish"],
-    step: 3,
-    images: ["assets/pieces/krapfatning-ring-1.jpg", "assets/pieces/krapfatning-ring-2.jpg", "assets/pieces/krapfatning-ring-3.jpg"],
-    trying: "Efter min egen tekniske tegning: en krapfatning til en 8 mm sort smaragd og to små lilla sten i siderne af skinnen.",
-    wrong: "",
-    next: "",
-    missing: ["status", "hvad gik galt", "næste skridt"]
-  },
-  {
     id: "cad",
-    title: "3D-modellering i CAD",
+    title: "Ringdesign i Rhino",
     started: "2026-09",
-    metal: "Digital model",
-    steps: ["Første model", "Signetring", "Alliancering", "Print / støbning", "Færdig"],
+    metal: "3D-model",
+    steps: ["Grundformer", "Signetring", "Alliancering", "Egne designs"],
     step: 3,
     images: ["assets/pieces/cad-1.jpg", "assets/pieces/cad-2.jpg"],
-    trying: "Jeg lærer at modellere ringe på computeren: en signetring og en alliancering med sten hele vejen rundt.",
+    trying: "Jeg lærer at designe ringe i Rhino: en signetring og en alliancering med sten hele vejen rundt. Det giver mig et præcist design at arbejde efter ved bænken.",
     wrong: "",
     next: "",
-    missing: ["program", "status", "næste skridt"]
+    missing: ["næste skridt"]
   }
 ];
