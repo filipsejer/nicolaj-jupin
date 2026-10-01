@@ -118,16 +118,16 @@ window.PIECES = [
     missing: ["legering", "Nicolajs beskrivelse"]
   },
   {
-    id: "oxideret-vedhaeng",
+    id: "snorkfroeken",
     type: "Vedhæng",
-    title: "Snorkfrøken, oxideret vedhæng",
+    title: "Snorkfrøken, vedhæng",
     date: "2026-05",
     metal: "Sølv",
-    techniques: ["Udsavning", "Oxidering", "Polering"],
+    techniques: ["Udsavning", "Polering"],
     featured: false,
-    images: ["assets/pieces/oxideret-vedhaeng-1.jpg"],
-    text: "Snorkfrøken fra Mumitroldene, savet ud og oxideret sort, med blankt poleret øsken.",
-    missing: ["legering", "Nicolajs beskrivelse"]
+    images: ["assets/pieces/snorkfroeken-1.jpg"],
+    text: "Snorkfrøken fra Mumitroldene, savet ud af sølvplade og poleret.",
+    missing: ["legering", "bedre foto"]
   },
   {
     id: "udsavet-ring",
