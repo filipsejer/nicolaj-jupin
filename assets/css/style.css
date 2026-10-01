@@ -297,6 +297,7 @@ p { margin: 0 0 1em; }
 .chip:hover { border-color: var(--ink); }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--linen-text); border-color: var(--ink); }
 .chip .c { opacity: .55; margin-left: 4px; }
+.chip--tech { border-style: dashed; border-color: var(--gold-deep); color: var(--gold-deep); }
 .sort { display: flex; align-items: center; gap: 10px; color: var(--muted); }
 .sort select { font: 400 .72rem/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; background: none; border: 1px solid var(--rule); color: var(--ink); padding: 10px 30px 10px 12px; appearance: none; cursor: pointer;
   background-image: linear-gradient(45deg, transparent 50%, var(--ink) 50%), linear-gradient(135deg, var(--ink) 50%, transparent 50%);

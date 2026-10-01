@@ -94,35 +94,41 @@
     var sortSel = document.getElementById("sort");
     var countEl = document.getElementById("count");
     var params = new URLSearchParams(location.search);
-    var state = { tech: params.get("teknik") || "Alle", sort: params.get("sorter") || "nyeste" };
+    var TYPES = window.TYPES || [];
+    // type = the category chips; teknik = an optional filter set by the skills ledger links on the front page.
+    var state = { type: params.get("type") || "Alle", tech: params.get("teknik") || "", sort: params.get("sorter") || "nyeste" };
+    var hasTech = function (p, t) { return p.techniques.indexOf(t) > -1; };
 
-    var used = TECHNIQUES.map(function (t) { return t.name; }).filter(function (name) {
-      return PIECES.some(function (p) { return p.techniques.indexOf(name) > -1; });
-    });
-    if (used.indexOf(state.tech) < 0) state.tech = "Alle";
-    chips.innerHTML = ["Alle"].concat(used).map(function (name) {
-      var n = name === "Alle" ? PIECES.length : PIECES.filter(function (p) { return p.techniques.indexOf(name) > -1; }).length;
-      return '<button class="chip" type="button" data-tech="' + esc(name) + '">' + esc(name) + '<span class="c">' + n + "</span></button>";
-    }).join("");
+    var usedTypes = TYPES.filter(function (t) { return PIECES.some(function (p) { return p.type === t; }); });
+    if (usedTypes.indexOf(state.type) < 0) state.type = "Alle";
+    if (!PIECES.some(function (p) { return hasTech(p, state.tech); })) state.tech = "";
     sortSel.value = state.sort;
 
     var render = function () {
-      var list = PIECES.filter(function (p) { return state.tech === "Alle" || p.techniques.indexOf(state.tech) > -1; })
+      var base = PIECES.filter(function (p) { return !state.tech || hasTech(p, state.tech); });
+      chips.innerHTML = ["Alle"].concat(usedTypes).map(function (name) {
+        var n = base.filter(function (p) { return name === "Alle" || p.type === name; }).length;
+        return '<button class="chip" type="button" data-type="' + esc(name) + '" aria-pressed="' + (name === state.type) + '">' +
+          esc(name) + '<span class="c">' + n + "</span></button>";
+      }).join("") + (state.tech ? '<button class="chip chip--tech" type="button" data-clear-tech aria-label="Fjern teknikfilter">Teknik: ' + esc(state.tech) + ' <span class="c">×</span></button>' : "");
+      var list = base.filter(function (p) { return state.type === "Alle" || p.type === state.type; })
         .sort(function (a, b) { var ad = a.date || "9999", bd = b.date || "9999";
           return state.sort === "aeldste" ? ad.localeCompare(bd) : (b.date || "").localeCompare(a.date || ""); });
-      grid.innerHTML = list.length ? list.map(card).join("") : '<p class="empty">Ingen stykker med denne teknik endnu.</p>';
+      grid.innerHTML = list.length ? list.map(card).join("") : '<p class="empty">Ingen stykker her endnu.</p>';
       countEl.textContent = list.length + (list.length === 1 ? " stykke" : " stykker");
-      chips.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", c.getAttribute("data-tech") === state.tech); });
       document.body.classList.toggle("show-progress", state.sort === "aeldste");
       var q = new URLSearchParams();
-      if (state.tech !== "Alle") q.set("teknik", state.tech);
+      if (state.type !== "Alle") q.set("type", state.type);
+      if (state.tech) q.set("teknik", state.tech);
       if (state.sort !== "nyeste") q.set("sorter", state.sort);
       history.replaceState(null, "", location.pathname + (q.toString() ? "?" + q : "") + location.hash);
       observe(grid);
     };
     chips.addEventListener("click", function (e) {
       var c = e.target.closest(".chip"); if (!c) return;
-      state.tech = c.getAttribute("data-tech"); render();
+      if (c.hasAttribute("data-clear-tech")) state.tech = "";
+      else state.type = c.getAttribute("data-type");
+      render();
     });
     sortSel.addEventListener("change", function () { state.sort = sortSel.value; render(); });
     render();

@@ -27,11 +27,15 @@ window.TECHNIQUES = [
   { name: "Polering",         desc: "Højglans, mat eller børstet — overfladen er den sidste signatur." }
 ];
 
+/* Kategorierne i portfolien, i visningsrækkefølge. Hvert stykke har en type herfra. */
+window.TYPES = ["Ringe", "Halskæder", "Vedhæng", "Øvelser", "Tegninger"];
+
 /* Færdige stykker, nyeste først. date = "ÅÅÅÅ-MM" — taget fra fotoets tidsstempel, ret hvis forkert.
    images = stier fra sidens rod; det første billede er forsidebilledet. */
 window.PIECES = [
   {
     id: "halvrund-ring",
+    type: "Ringe",
     title: "Halvrund ring",
     date: "2026-10",
     metal: "Sølv",
@@ -43,6 +47,7 @@ window.PIECES = [
   },
   {
     id: "ring-nj-stempel",
+    type: "Ringe",
     title: "Ring med facetkant",
     date: "2026-09",
     metal: "Sølv",
@@ -54,6 +59,7 @@ window.PIECES = [
   },
   {
     id: "blankpoleret-ring",
+    type: "Ringe",
     title: "Blankpoleret ring",
     date: "2026-09",
     metal: "Messing",
@@ -65,6 +71,7 @@ window.PIECES = [
   },
   {
     id: "hamrede-ringe",
+    type: "Ringe",
     title: "Hamrede ringe, par",
     date: "2026-09",
     metal: "Sølv",
@@ -76,6 +83,7 @@ window.PIECES = [
   },
   {
     id: "bred-ring",
+    type: "Ringe",
     title: "Bred ring, børstet",
     date: "2026-09",
     metal: "Messing",
@@ -87,6 +95,7 @@ window.PIECES = [
   },
   {
     id: "graveringsovelse",
+    type: "Øvelser",
     title: "Graveringsøvelse",
     date: "2026-08",
     metal: "Metalplade",
@@ -98,6 +107,7 @@ window.PIECES = [
   },
   {
     id: "saveovelser",
+    type: "Øvelser",
     title: "Saveøvelser i messing",
     date: "2026-08",
     metal: "Messing",
@@ -109,6 +119,7 @@ window.PIECES = [
   },
   {
     id: "flettet-ring-hjerte",
+    type: "Ringe",
     title: "Flettet ring med hjerte",
     date: "2026-05",
     metal: "Sølv",
@@ -120,6 +131,7 @@ window.PIECES = [
   },
   {
     id: "oxideret-vedhaeng",
+    type: "Vedhæng",
     title: "Snorkfrøken, oxideret vedhæng",
     date: "2026-05",
     metal: "Sølv",
@@ -131,6 +143,7 @@ window.PIECES = [
   },
   {
     id: "udsavet-ring",
+    type: "Ringe",
     title: "Gennembrudt ring",
     date: "2026-04",
     metal: "Sølv — bekræft",
@@ -142,6 +155,7 @@ window.PIECES = [
   },
   {
     id: "bolgeflettet-ring",
+    type: "Ringe",
     title: "Bølgeflettet ring",
     date: "2026-03",
     metal: "Sølv",
@@ -153,6 +167,7 @@ window.PIECES = [
   },
   {
     id: "kongekaede-solv",
+    type: "Halskæder",
     title: "Kongekæde i sølv",
     date: "2026-02",
     metal: "Sølv",
@@ -164,6 +179,7 @@ window.PIECES = [
   },
   {
     id: "bred-flettet-ring",
+    type: "Ringe",
     title: "Ring til Malte Ebert",
     date: "2026-02",
     metal: "Sølv",
@@ -175,6 +191,7 @@ window.PIECES = [
   },
   {
     id: "ring-lyserod-sten",
+    type: "Ringe",
     title: "Ring med lyserød sten",
     date: "2026-02",
     metal: "Sølv · lyserød cabochon",
@@ -186,6 +203,7 @@ window.PIECES = [
   },
   {
     id: "flettet-ring-2026",
+    type: "Ringe",
     title: "Flettet sølvring",
     date: "2026-01",
     metal: "Sølv",
@@ -197,6 +215,7 @@ window.PIECES = [
   },
   {
     id: "panserkaede",
+    type: "Halskæder",
     title: "Panserkæde",
     date: "2026-01",
     metal: "Sølv",
@@ -208,6 +227,7 @@ window.PIECES = [
   },
   {
     id: "trad-bogstav",
+    type: "Øvelser",
     title: "Bogstavet F i kobbertråd",
     date: "2025-12",
     metal: "Kobber",
@@ -219,6 +239,7 @@ window.PIECES = [
   },
   {
     id: "kantet-ring",
+    type: "Ringe",
     title: "Kantet ring",
     date: "2025-11",
     metal: "Sølv",
@@ -230,6 +251,7 @@ window.PIECES = [
   },
   {
     id: "kongekaede-kobber",
+    type: "Halskæder",
     title: "Kongekæde i kobber",
     date: "2025-11",
     metal: "Kobber",
@@ -241,6 +263,7 @@ window.PIECES = [
   },
   {
     id: "flettet-solvring-2025",
+    type: "Ringe",
     title: "Flettet ring med midterbånd",
     date: "2025-10",
     metal: "Sølv",
@@ -252,6 +275,7 @@ window.PIECES = [
   },
   {
     id: "dronningekaede",
+    type: "Halskæder",
     title: "Dronningekæde",
     date: "2025-10",
     metal: "Sølv · kobber",
@@ -263,6 +287,7 @@ window.PIECES = [
   },
   {
     id: "kobberflet-solvring",
+    type: "Ringe",
     title: "Kobberfletning i sølvring",
     date: "2025-10",
     metal: "Kobber · sølv",
@@ -274,6 +299,7 @@ window.PIECES = [
   },
   {
     id: "karmoisin-kaede",
+    type: "Halskæder",
     title: "Karmoisinrød halskæde",
     date: "2025-10",
     metal: "Metal · sten — bekræft",
@@ -285,6 +311,7 @@ window.PIECES = [
   },
   {
     id: "sort-guld-saet",
+    type: "Halskæder",
     title: "Sæt med sorte sten",
     date: "2025-02",
     metal: "Gult metal · sorte sten — bekræft",
@@ -296,6 +323,7 @@ window.PIECES = [
   },
   {
     id: "tegninger",
+    type: "Tegninger",
     title: "Tegninger",
     date: "2026-09",
     metal: "Blyant på papir",
