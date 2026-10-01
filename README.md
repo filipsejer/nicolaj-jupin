@@ -36,7 +36,6 @@ The skills ledger counts the pieces per technique automatically. Technique names
 - [ ] Hero photo on the front page (`index.html`, search for "Hovedfoto følger")
 - [ ] Portrait and Nicolaj's own text on `om/index.html`
 - [ ] Availability date: search for `Efter aftale` in `om/index.html` and `kontakt/index.html`
-- [ ] Once the domain is known, add a `CNAME` file and make `og:image` an absolute URL
 
 ## Design system: "The Hallmark"
 
@@ -48,4 +47,6 @@ The skills ledger counts the pieces per technique automatically. Technique names
 
 ## Deploy (GitHub Pages)
 
-Settings → Pages → *Deploy from a branch* → `main` / root. Add a custom domain (e.g. `nicolajjupin.dk`) on the same page.
+Settings → Pages → *Deploy from a branch* → `main` / root. Custom domain: **nicolaj-jupin.dk** (set by the `CNAME` file). Tick *Enforce HTTPS*.
+
+DNS at Simply.com: four `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `CNAME` `www` → `filipsejer.github.io`.
