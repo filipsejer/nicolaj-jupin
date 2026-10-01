@@ -94,18 +94,6 @@ window.PIECES = [
     missing: []
   },
   {
-    id: "graveringsovelse",
-    type: "Øvelser",
-    title: "Graveringsøvelse",
-    date: "2026-08",
-    metal: "Metalplade",
-    techniques: ["Gravering", "Teknisk tegning"],
-    featured: false,
-    images: ["assets/pieces/graveringsovelse-1.jpg", "assets/pieces/graveringsovelse-2.jpg", "assets/pieces/graveringsovelse-3.jpg"],
-    text: "Et ornament tegnet op i hånden og overført til en metalplade til gravering. Mine første skridt med gravstikken.",
-    missing: ["materiale", "Nicolajs beskrivelse"]
-  },
-  {
     id: "saveovelser",
     type: "Øvelser",
     title: "Saveøvelser i messing",
@@ -322,15 +310,111 @@ window.PIECES = [
     missing: ["materialer"]
   },
   {
-    id: "tegninger",
+    id: "tegning-fatninger",
     type: "Tegninger",
-    title: "Tegninger",
+    title: "Kassefatninger og ring",
     date: "2026-09",
     metal: "Blyant på papir",
     techniques: ["Teknisk tegning"],
     featured: false,
-    images: ["assets/pieces/tegninger-1.jpg", "assets/pieces/tegninger-2.jpg", "assets/pieces/tegninger-3.jpg", "assets/pieces/tegninger-4.jpg", "assets/pieces/tegninger-5.jpg", "assets/pieces/tegninger-6.jpg", "assets/pieces/tegninger-7.jpg"],
-    text: "Alt starter på papiret. Skitser og tekniske tegninger med mål, materialer og sten — fra flettede ringe til fatninger og et kors.",
+    images: ["assets/pieces/tegning-fatninger-1.jpg"],
+    text: "Studier af kassefatninger set fra flere sider, og en ring med fatning tegnet i front- og sideprojektion.",
+    missing: []
+  },
+  {
+    id: "tegning-ornament",
+    type: "Tegninger",
+    title: "Ornament med dråbe",
+    date: "2026-08",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/tegning-ornament-1.jpg", "assets/pieces/tegning-ornament-2.jpg"],
+    text: "Et rundt ornament med en dråbe i midten og ranker hele vejen rundt, tegnet i hånden og fyldt op i sort.",
+    missing: []
+  },
+  {
+    id: "tegning-kors",
+    type: "Tegninger",
+    title: "Kors med sten",
+    date: "2026-06",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/tegning-kors-1.jpg"],
+    text: "Et kors med en række runde sten ned gennem midten og ud i armene.",
+    missing: []
+  },
+  {
+    id: "tegning-hjerte",
+    type: "Tegninger",
+    title: "Flettet ring med hjerte",
+    date: "2026-05",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/flettet-ring-hjerte-2.jpg"],
+    text: "Tegningen bag den færdige ring med hjerte: en fletning mellem to skinner med et hjerte i midten.",
+    missing: []
+  },
+  {
+    id: "tegning-fletmoenster-skinner",
+    type: "Tegninger",
+    title: "Fletmønster mellem skinner",
+    date: "2026-05",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/tegning-fletmoenster-skinner-1.jpg"],
+    text: "Et bredt fletmønster mellem to glatte skinner.",
+    missing: []
+  },
+  {
+    id: "tegning-ring-med-sten",
+    type: "Tegninger",
+    title: "Ring med sten, 2:1",
+    date: "2026-04",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/tegning-ring-med-sten-1.jpg"],
+    text: "En ring med flettede sider og en rektangulær sten, tegnet i dobbelt størrelse.",
+    missing: []
+  },
+  {
+    id: "tegning-krapfatning",
+    type: "Tegninger",
+    title: "Teknisk tegning: ring med krapfatning",
+    date: "2026-04",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/tegning-krapfatning-1.jpg"],
+    text: "Teknisk tegning i flere projektioner med materialeliste: sølv 925, en 8 mm sort smaragd og to lilla 2 mm sten.",
+    missing: []
+  },
+  {
+    id: "tegning-fletmoenster-snoet",
+    type: "Tegninger",
+    title: "Fletmønster med snoet tråd",
+    date: "2026-04",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/tegning-fletmoenster-snoet-1.jpg"],
+    text: "Et fletmønster hvor to snoede tråde krydser hinanden mellem to skinner.",
+    missing: []
+  },
+  {
+    id: "skitse-flettet-ring-oval",
+    type: "Tegninger",
+    title: "Skitse: flettet ring med oval sten",
+    date: "2026-03",
+    metal: "Blyant på papir",
+    techniques: ["Teknisk tegning"],
+    featured: false,
+    images: ["assets/pieces/skitse-flettet-ring-oval-1.jpg"],
+    text: "En skitse af en flettet ring med en oval sten, med detaljer af fletningen øverst.",
     missing: []
   }
 ];
