@@ -56,11 +56,7 @@
   var ledger = document.getElementById("ledger");
   if (ledger) {
     ledger.innerHTML = TECHNIQUES.map(function (t) {
-      var n = PIECES.filter(function (p) { return p.techniques.indexOf(t.name) > -1; }).length;
-      if (!n) return "";
-      return '<li class="reveal"><a href="' + ROOT + "portfolio/?teknik=" + encodeURIComponent(t.name) + '">' +
-        '<span class="t">' + esc(t.name) + '</span><span class="d">' + esc(t.desc) + "</span>" +
-        '<span class="n">' + n + (n === 1 ? " stykke" : " stykker") + " →</span></a></li>";
+      return '<li class="reveal"><div class="row"><span class="t">' + esc(t.name) + '</span><span class="d">' + esc(t.desc) + "</span></div></li>";
     }).join("");
   }
 

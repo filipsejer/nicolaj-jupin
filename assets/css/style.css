@@ -245,20 +245,16 @@ p { margin: 0 0 1em; }
 /* ---------- skills ledger ---------- */
 .ledger { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule-on-ink); counter-reset: led; }
 .ledger li { counter-increment: led; }
-.ledger a, .ledger .row {
-  display: grid; grid-template-columns: 3.2rem minmax(0, 1fr) minmax(0, 1.1fr) 7.5rem; align-items: baseline; gap: 20px;
-  padding: 22px 0; border-bottom: 1px solid var(--rule-on-ink); text-decoration: none;
-  transition: padding .3s var(--ease), background .3s;
+.ledger .row {
+  display: grid; grid-template-columns: 3.2rem minmax(0, 1fr) minmax(0, 1.1fr); align-items: baseline; gap: 20px;
+  padding: 22px 0; border-bottom: 1px solid var(--rule-on-ink);
 }
-.ledger a::before { content: counter(led, decimal-leading-zero); font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; color: var(--gold); }
+.ledger .row::before { content: counter(led, decimal-leading-zero); font-family: var(--mono); font-size: .72rem; letter-spacing: .1em; color: var(--gold); }
 .ledger .t { font-family: var(--display); font-size: clamp(1.5rem, 3vw, 2.4rem); line-height: 1.1; }
 .ledger .d { color: var(--muted-on-ink); font-size: .95rem; max-width: 28em; }
-.ledger .n { text-align: right; font-family: var(--mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-on-ink); white-space: nowrap; }
-.ledger a:hover { padding-left: 12px; }
-.ledger a:hover .t { font-style: italic; color: var(--gold); }
 @media (max-width: 760px) {
-  .ledger a { grid-template-columns: 2.4rem minmax(0, 1fr) auto; }
-  .ledger .d { display: none; }
+  .ledger .row { grid-template-columns: 2.4rem minmax(0, 1fr); row-gap: 6px; padding: 18px 0; }
+  .ledger .d { grid-column: 2; }
 }
 
 /* ---------- WIP ---------- */

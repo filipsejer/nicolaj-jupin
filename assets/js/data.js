@@ -10,14 +10,13 @@
    ============================================================ */
 
 /* Teknikkerne i "Færdighedsprotokollen" på forsiden, i visningsrækkefølge.
-   En teknik vises kun, hvis mindst ét stykke bruger den. */
+   Listen vises præcis som den står her. */
 window.TECHNIQUES = [
   { name: "Fletning",         desc: "Flettede metaller — mønstre, der kræver ens spænding hele vejen." },
   { name: "Kædefremstilling", desc: "Kæder bygget fra bunden: konge-, dronning- og panserkæde." },
   { name: "Lodning",          desc: "Rene, næsten usynlige samlinger — fra fine kædeled til ringskinner." },
   { name: "Udsavning",        desc: "Præcis savning efter tegning — fra mønstre i messing til gennembrudte ringe." },
   { name: "Teknisk tegning",  desc: "Egne designs tegnet op med mål og materialer, før der saves et eneste stykke." },
-  { name: "Gravering",        desc: "Håndgravering — de første øvelser med gravstikken." },
   { name: "Omsmeltning",     desc: "Rester og skrot smeltet om i diglen, så intet metal går til spilde." },
   { name: "Støbning",         desc: "Støbning af tene og plader — mit eget råmateriale, klar til at blive valset ud." },
   { name: "Valsning",         desc: "Plade og tråd valset til ensartet tykkelse." },
