@@ -1,54 +1,76 @@
-# Nicolaj Jupin: guldsmedelærling
+# nicolaj-jupin.dk
 
-Portfolio site for Nicolaj Jupin, a goldsmith apprentice in Copenhagen who is looking for a *læreplads* (apprenticeship).
-It's plain HTML/CSS with a little vanilla JS. There is no build step and nothing to install.
+Portfolio site for Nicolaj Jupin, a goldsmith in training based in Copenhagen.
 
-## Pages
+The site is plain HTML, CSS and a bit of JavaScript. There's no build step or package manager; GitHub Pages serves the files as they are.
 
-| URL | Page |
-| --- | --- |
-| `/` | Forside: hero, promises, skills ledger ("Færdighedsprotokol"), selected work, current WIP, contact |
-| `/portfolio/` | All pieces. Filter by category (Ringe, Halskæder …, set by `type` in `data.js`); sort oldest-first to show progression. Each piece opens in a dialog and has a shareable link (`/portfolio/#signetring`) |
-| `/wip/` | Work in progress written as workbench notes: what I'm trying / what went wrong / next step |
-| `/om/` | About |
-| `/kontakt/` | Email, phone, Instagram, availability and a form that opens the visitor's mail app |
+## Running it locally
 
-## Preview locally
+Any static file server works. From the repo root:
 
 ```sh
-npx http-server . -p 8080     # or: python3 -m http.server 8080
+python3 -m http.server 8080
 ```
 
-## Adding content
+Then open http://localhost:8080. Opening `index.html` directly from disk mostly works too, but the page links point at folders (`portfolio/`, `om/` …), so a server is nicer.
 
-**All pieces and WIP projects live in [`assets/js/data.js`](assets/js/data.js).** To add a piece:
+## Structure
 
-1. Put the photos in `assets/pieces/`, e.g. `assets/pieces/signetring-1.jpg`. Use portrait 4:5, about 1600 px on the long side, JPG quality around 80.
-2. Copy a block in `PIECES`, fill in the fields and list the photos: `images: ["assets/pieces/signetring-1.jpg", "assets/pieces/signetring-2.jpg"]`.
-3. Delete `placeholder: true` so the "Pladsholder" tag goes away.
+```
+index.html            front page
+portfolio/            all pieces, filterable by category
+wip/                  projects in progress
+om/                   about
+kontakt/              contact
+assets/js/data.js     all portfolio and WIP content
+assets/js/main.js     rendering, filters, the piece dialog
+assets/css/style.css
+assets/fonts/         self-hosted fonts
+assets/img/           logo, favicon, share image
+assets/pieces/        photos
+```
 
-`featured: true` puts a piece on the front page (the 3 newest featured pieces are shown). The "Nr." on each piece is worked out from the dates, so the oldest piece is Nr. 01.
-The skills ledger counts the pieces per technique automatically. Technique names must match the names in `TECHNIQUES`.
+## Adding a piece
 
-## Placeholders still to replace
+Everything in the portfolio comes from `assets/js/data.js`, so adding or editing a piece doesn't touch any HTML.
 
-- [ ] Real pieces and photos in `data.js` (everything is currently `placeholder: true`)
-- [ ] Hero photo on the front page (`index.html`, search for "Hovedfoto følger")
-- [ ] Portrait and Nicolaj's own text on `om/index.html`
-- [ ] Availability date: search for `Efter aftale` in `om/index.html` and `kontakt/index.html`
+1. Resize the photos (around 1400 px on the long side is plenty) and put them in `assets/pieces/`.
+2. Add an entry to `PIECES`:
 
-## Design system: "The Hallmark"
+```js
+{
+  id: "signetring",                 // also used in the link: /portfolio/#signetring
+  type: "Ringe",                    // one of TYPES
+  title: "Signetring",
+  date: "2026-11",                  // YYYY-MM
+  metal: "Sølv 925",
+  techniques: ["Lodning", "Polering"],
+  featured: false,                  // true = can show on the front page
+  images: ["assets/pieces/signetring-1.jpg", "assets/pieces/signetring-2.jpg"],
+  text: "Short description.",
+  missing: []
+}
+```
 
-- **Colour:** ink blue `#14224A` dominates, muted linen `#E2DACB` is the paper, gold `#C9A24A` is kept for accents only.
-  Gold only goes on blue; on linen use `--gold-deep` `#7D5F1C`.
-- **Type:** Bodoni Moda (display; the italic is the voice), Schibsted Grotesk (text), Geist Mono (specs and labels).
-  The fonts are self-hosted in `assets/fonts/`, so the site doesn't call Google's servers (GDPR).
-- **Mark:** `assets/img/mark.svg` is the NJ monogram in a hallmark-shaped frame. It's drawn from Bodoni outlines, so it doesn't need the font to render.
+A few things worth knowing:
 
-## Deploy (GitHub Pages)
+- Pieces are numbered by date, oldest first, so the numbers shift when an older piece is added.
+- The first image is the one shown in the grid.
+- Anything listed in `missing` shows up as "Info mangler" in the piece view. Leave it empty once the details are in.
+- Categories come from `TYPES` and the skills list on the front page comes from `TECHNIQUES`, both at the top of `data.js`.
 
-Settings → Pages → *Deploy from a branch* → `main` / root. Custom domain: **nicolaj-jupin.dk** (set by the `CNAME` file). Tick *Enforce HTTPS*.
+WIP projects live in the `WIP` list in the same file and work the same way.
 
-DNS at Simply.com: four `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `CNAME` `www` → `filipsejer.github.io`.
+## Photos
 
-Every push to `main` triggers a "pages build and deployment" run under the repo's **Actions** tab; the live site updates when it turns green (usually 1–2 minutes).
+Strip location data from photos before committing them. The repo is public, and phone photos often carry GPS coordinates in their metadata.
+
+## Deployment
+
+GitHub Pages builds from the root of `main`, and every push goes live within a minute or two. The custom domain is set in `CNAME`, with the DNS records for nicolaj-jupin.dk pointing at GitHub Pages.
+
+## Credits
+
+Fonts: Bodoni Moda, Schibsted Grotesk and Geist Mono, all under the SIL Open Font License.
+
+Photos and content © Nicolaj Jupin.
