@@ -109,7 +109,7 @@ window.PIECES = [
     metal: "Sølv",
     techniques: ["Fletning", "Lodning", "Teknisk tegning", "Polering"],
     featured: true,
-    images: ["assets/pieces/flettet-ring-hjerte-1.jpg", "assets/pieces/flettet-ring-hjerte-2.jpg", "assets/pieces/flettet-ring-hjerte-3.jpg"],
+    images: ["assets/pieces/flettet-ring-hjerte-1.jpg", "assets/pieces/flettet-ring-hjerte-2.jpg"],
     text: "Tegnet op først, så bygget: en flettet midte af trukket tråd, lagt mellem to glatte skinner, med et hjerte loddet på forsiden. Fletningen fortsætter hele vejen rundt.",
     missing: ["legering", "Nicolajs beskrivelse"]
   },
@@ -169,7 +169,7 @@ window.PIECES = [
     metal: "Sølv",
     techniques: ["Fletning", "Lodning", "Polering"],
     featured: true,
-    images: ["assets/pieces/bred-flettet-ring-1.jpg", "assets/pieces/bred-flettet-ring-2.jpg", "assets/pieces/bred-flettet-ring-3.jpg", "assets/pieces/bred-flettet-ring-4.jpg", "assets/pieces/bred-flettet-ring-5.jpg", "assets/pieces/bred-flettet-ring-6.jpg"],
+    images: ["assets/pieces/bred-flettet-ring-1.jpg", "assets/pieces/bred-flettet-ring-2.jpg", "assets/pieces/bred-flettet-ring-3.jpg", "assets/pieces/bred-flettet-ring-4.jpg", "assets/pieces/bred-flettet-ring-5.jpg", "assets/pieces/bred-flettet-ring-6.jpg", "assets/pieces/bred-flettet-ring-7.jpg"],
     text: "En bred ring med flettet midte, lavet til sangeren Malte Ebert. Tråden flettes først som en lang fletning, bøjes til en ring og loddes ind mellem to skinner. Billederne viser processen fra fletning til færdig ring i æsken.",
     missing: ["legering"]
   },
