@@ -68,17 +68,18 @@
   function wipBlock(w) {
     var bars = w.steps.map(function (_, i) { return '<i class="' + (i < w.step ? "on" : "") + '"></i>'; }).join("");
     return '<article class="wip reveal" id="' + esc(w.id) + '">' +
-      '<div class="frame">' + photo(w.images, w.title, "Foto fra bænken følger") + "</div>" +
+      '<div class="frame">' + (w.images.length ? missingTag(w) : "") + photo(w.images, w.title, "Foto fra bænken følger") + "</div>" +
       "<div>" +
       '<div class="wip-status spec"><span class="live">På bænken</span><span>Startet ' + month(w.started) + "</span><span>" + esc(w.metal) + "</span></div>" +
       "<h3>" + esc(w.title) + "</h3>" +
       '<div class="progress" style="--steps:' + w.steps.length + '" aria-hidden="true">' + bars + "</div>" +
       '<span class="progress-label spec">Trin ' + w.step + " af " + w.steps.length + " — " + esc(w.steps[w.step - 1]) + "</span>" +
       '<dl class="notes">' +
-      "<div><dt>Hvad jeg prøver</dt><dd>" + esc(w.trying) + "</dd></div>" +
-      "<div><dt>Hvad gik galt</dt><dd>" + esc(w.wrong) + "</dd></div>" +
-      "<div><dt>Næste skridt</dt><dd>" + esc(w.next) + "</dd></div>" +
-      "</dl></div></article>";
+      [["Hvad jeg prøver", w.trying], ["Hvad gik galt", w.wrong], ["Næste skridt", w.next]].filter(function (n) { return n[1]; })
+        .map(function (n) { return "<div><dt>" + n[0] + "</dt><dd>" + esc(n[1]) + "</dd></div>"; }).join("") +
+      "</dl>" +
+      (w.missing && w.missing.length ? '<p class="spec" style="color:var(--gold-deep);margin-top:16px">Info mangler: ' + esc(w.missing.join(", ")) + "</p>" : "") +
+      "</div></article>";
   }
   var wipEl = document.getElementById("wip");
   if (wipEl) {
