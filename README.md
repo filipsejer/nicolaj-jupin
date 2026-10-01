@@ -50,3 +50,5 @@ The skills ledger counts the pieces per technique automatically. Technique names
 Settings → Pages → *Deploy from a branch* → `main` / root. Custom domain: **nicolaj-jupin.dk** (set by the `CNAME` file). Tick *Enforce HTTPS*.
 
 DNS at Simply.com: four `A` records for `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`, and `CNAME` `www` → `filipsejer.github.io`.
+
+Every push to `main` triggers a "pages build and deployment" run under the repo's **Actions** tab; the live site updates when it turns green (usually 1–2 minutes).
