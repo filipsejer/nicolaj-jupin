@@ -74,7 +74,7 @@
       '<div class="wip-status spec"><span class="live">På bænken</span><span>Startet ' + month(w.started) + "</span><span>" + esc(w.metal) + "</span></div>" +
       "<h3>" + esc(w.title) + "</h3>" +
       '<div class="progress" style="--steps:' + w.steps.length + '" aria-hidden="true">' + bars + "</div>" +
-      '<span class="progress-label spec">Trin ' + w.step + " af " + w.steps.length + " — " + esc(w.steps[w.step - 1]) + "</span>" +
+      '<span class="progress-label spec">Trin ' + w.step + " af " + w.steps.length + " · " + esc(w.steps[w.step - 1]) + "</span>" +
       '<dl class="notes">' +
       [["Hvad jeg prøver", w.trying], ["Hvad gik galt", w.wrong], ["Næste skridt", w.next]].filter(function (n) { return n[1]; })
         .map(function (n) { return "<div><dt>" + n[0] + "</dt><dd>" + esc(n[1]) + "</dd></div>"; }).join("") +
